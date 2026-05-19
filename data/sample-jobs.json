@@ -1,0 +1,32 @@
+[
+  {
+    "id": "platform-engineer",
+    "company": "Acme Systems",
+    "title": "Platform Engineer",
+    "keywords": ["platform engineering", "Kubernetes", "Terraform", "CI/CD", "observability"],
+    "summary": "Platform Engineer with hands-on experience building Kubernetes, Terraform, CI/CD, and observability capabilities for production engineering teams. Strong fit for roles focused on developer productivity, reliable cloud operations, and secure infrastructure automation.",
+    "skills": [
+      ["Platform Engineering", "Kubernetes, Terraform, internal developer platforms, deployment automation"],
+      ["Reliability", "SLOs, alerting, runbooks, incident response, production operations"]
+    ],
+    "experience": [
+      { "role": "current-platform", "bullets": [0, 1, 2, 3] },
+      { "role": "previous-devops", "bullets": [0, 1, 2] }
+    ]
+  },
+  {
+    "id": "site-reliability-engineer",
+    "company": "Northstar Apps",
+    "title": "Site Reliability Engineer",
+    "keywords": ["site reliability", "incident response", "observability", "automation"],
+    "summary": "Site Reliability Engineer with experience improving production reliability through observability, automation, incident response, and cloud platform operations. Strong background in Kubernetes, CI/CD, runbooks, and operational readiness.",
+    "skills": [
+      ["Reliability Engineering", "incident response, runbooks, alert tuning, operational readiness"],
+      ["Observability", "Prometheus, Grafana, OpenTelemetry, service dashboards"]
+    ],
+    "experience": [
+      { "role": "current-platform", "bullets": [1, 2, 3] },
+      { "role": "previous-devops", "bullets": [1, 2, 3] }
+    ]
+  }
+]

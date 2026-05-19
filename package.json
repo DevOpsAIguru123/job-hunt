@@ -1,0 +1,14 @@
+{
+  "name": "shareable-resume-generator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Generic JSON-driven DOCX resume generator.",
+  "type": "commonjs",
+  "scripts": {
+    "generate": "node src/generate-resumes.js",
+    "privacy-check": "node src/privacy-check.js"
+  },
+  "dependencies": {
+    "docx": "^9.6.1"
+  }
+}

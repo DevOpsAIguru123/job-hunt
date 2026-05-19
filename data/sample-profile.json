@@ -1,0 +1,49 @@
+{
+  "contact": {
+    "name": "ALEX MORGAN",
+    "line1": "Austin, TX | 555-010-1234 | alex.morgan@example.com",
+    "line2": "linkedin.com/in/alex-morgan | github.com/alexmorgan | alexmorgan.dev"
+  },
+  "summary": "Platform Engineer with experience building cloud infrastructure, Kubernetes platforms, CI/CD pipelines, infrastructure as code, and production observability. Strong record improving deployment speed, reliability, and operational safety for engineering teams.",
+  "skills": [
+    ["Cloud Platforms", "AWS, Azure, GCP"],
+    ["Containers", "Kubernetes, Docker, Helm"],
+    ["Infrastructure as Code", "Terraform, CloudFormation"],
+    ["CI/CD", "GitHub Actions, Jenkins, Azure DevOps"],
+    ["Programming", "Python, JavaScript, Bash"],
+    ["Observability", "Prometheus, Grafana, OpenTelemetry"]
+  ],
+  "certifications": [
+    "Cloud Certification Placeholder",
+    "Kubernetes Certification Placeholder"
+  ],
+  "education": [
+    "B.S. in Computer Science | Example University | 2017"
+  ],
+  "roles": {
+    "current-platform": {
+      "title": "Senior Platform Engineer",
+      "company": "Example Cloud Co.",
+      "location": "Austin, TX",
+      "dates": "2022 - Present",
+      "bullets": [
+        "Built reusable Terraform modules for Kubernetes, networking, and deployment infrastructure, reducing environment setup time by 60%.",
+        "Improved production reliability by creating service dashboards, alerting rules, and incident runbooks for critical systems.",
+        "Led CI/CD modernization across multiple services, reducing deployment failures and increasing release frequency.",
+        "Partnered with security teams to implement least-privilege access patterns, secret management, and audit-friendly infrastructure workflows."
+      ]
+    },
+    "previous-devops": {
+      "title": "DevOps Engineer",
+      "company": "Example Software Inc.",
+      "location": "Remote",
+      "dates": "2018 - 2022",
+      "bullets": [
+        "Migrated legacy workloads to containerized deployments using Docker, Kubernetes, and Helm.",
+        "Automated build, test, and release workflows with GitHub Actions and Jenkins.",
+        "Created Python and Bash tooling to reduce repetitive operational tasks and improve environment consistency.",
+        "Supported on-call operations, incident response, and post-incident improvement tracking."
+      ]
+    }
+  }
+}
