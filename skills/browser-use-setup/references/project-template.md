@@ -41,4 +41,4 @@ uv pip install -e .
 uvx browser-use install
 ```
 
-Keep real profile data, credentials, screenshots, run reports, and browser state out of the shareable source tree.
+Keep real profile data, credentials, screenshots, run reports, and browser state out of the public source tree.

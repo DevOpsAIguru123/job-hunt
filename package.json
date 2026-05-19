@@ -1,8 +1,8 @@
 {
-  "name": "shareable-resume-generator",
+  "name": "job-hunt",
   "version": "0.1.0",
   "private": true,
-  "description": "Generic JSON-driven DOCX resume generator.",
+  "description": "Privacy-safe job hunt toolkit with JSON-driven DOCX resume generation.",
   "type": "commonjs",
   "scripts": {
     "generate": "node src/generate-resumes.js",

@@ -116,4 +116,4 @@ Read `references/hybrid-playwright.md` for the handoff checklist.
 - Browser Use used for inspection/recovery unless the user explicitly asks otherwise.
 - Playwright used for stable filling where available.
 - Sensitive fields and final submit were not handled without exact approval.
-- No credentials, browser profiles, screenshots, or generated run artifacts were added to the shareable bundle.
+- No credentials, browser profiles, screenshots, or generated run artifacts were added to the public bundle.

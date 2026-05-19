@@ -1,6 +1,6 @@
-# Shareable Resume Generator
+# Job Hunt
 
-Generic, JSON-driven resume generation bundle extracted from a private job-search workspace.
+Privacy-safe job hunt toolkit with JSON-driven resume generation and reusable Codex skills.
 
 This folder intentionally excludes private resumes, application history, screenshots, browser profiles, personal configuration, and generated artifacts. Replace the sample data in `data/` with your own profile and target jobs before generating resumes.
 
@@ -9,8 +9,8 @@ This folder intentionally excludes private resumes, application history, screens
 - `src/generate-resumes.js` - CLI that creates ATS-friendly `.docx` resumes.
 - `data/sample-profile.json` - placeholder profile, roles, skills, education, and certifications.
 - `data/sample-jobs.json` - placeholder target jobs used to tailor output.
-- `skills/resume-generation/` - shareable Codex skill plus references for resume generation, ATS checks, tailoring, bullet writing, quantification, and data schema.
-- `skills/browser-use-setup/` - shareable Codex skill for setting up and safely running Browser Use scouting/recovery workflows.
+- `skills/resume-generation/` - Codex skill plus references for resume generation, ATS checks, tailoring, bullet writing, quantification, and data schema.
+- `skills/browser-use-setup/` - Codex skill for setting up and safely running Browser Use scouting/recovery workflows.
 - `package.json` - minimal dependency list and npm scripts.
 
 ## What It Excludes
@@ -68,7 +68,7 @@ node src/generate-resumes.js --job-id platform-engineer
 
 ## Privacy Check
 
-Before sharing this folder, run:
+Before publishing or redistributing this folder, run:
 
 ```bash
 npm run privacy-check

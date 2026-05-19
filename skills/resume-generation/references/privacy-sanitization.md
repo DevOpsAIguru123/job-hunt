@@ -1,6 +1,6 @@
 # Privacy Sanitization
 
-## Exclude From Shareable Bundles
+## Exclude From Public Bundles
 
 - Real resumes and generated `.docx` or `.pdf` files.
 - Personal profile JSON.
@@ -32,5 +32,5 @@ Then scan for known private names, emails, phone numbers, employer names, and us
 - Could a stranger identify the original candidate?
 - Does any file reveal application history or job targets?
 - Does any generated document contain real resume content?
-- Are outputs ignored or stored outside the shareable folder?
+- Are outputs ignored or stored outside the public folder?
 - Are all examples obviously fake or generic?

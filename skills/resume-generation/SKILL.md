@@ -1,6 +1,6 @@
 ---
 name: resume-generation
-description: Use when generating, tailoring, reviewing, or optimizing resumes from structured profile data and target job descriptions; includes ATS-safe DOCX generation, keyword alignment, bullet improvement, quantification, and shareable privacy-safe resume workflows.
+description: Use when generating, tailoring, reviewing, or optimizing resumes from structured profile data and target job descriptions; includes ATS-safe DOCX generation, keyword alignment, bullet improvement, quantification, and privacy-safe resume workflows.
 ---
 
 # Resume Generation
@@ -11,7 +11,7 @@ Generate truthful, ATS-safe resumes from structured profile data and target job 
 
 ## Privacy Rules
 
-- Never include private resumes, real contact details, application databases, screenshots, browser profiles, credentials, or generated application evidence in a shareable bundle.
+- Never include private resumes, real contact details, application databases, screenshots, browser profiles, credentials, or generated application evidence in a public bundle.
 - Use explicit profile data supplied by the user or placeholder sample data.
 - Do not invent employers, degrees, certifications, dates, tools, metrics, or outcomes.
 - If a requested keyword is not supported by the profile, mark it as a gap instead of adding it.
@@ -75,7 +75,7 @@ npm run privacy-check
 - `references/tailoring-workflow.md` - target-job tailoring process.
 - `references/bullet-writing.md` - achievement bullet patterns.
 - `references/quantification.md` - finding defensible metrics.
-- `references/privacy-sanitization.md` - shareable bundle checklist.
+- `references/privacy-sanitization.md` - public bundle privacy checklist.
 
 ## Output Summary
 
@@ -85,4 +85,4 @@ When finished, report:
 - Source profile and job files used.
 - Privacy and generation checks run.
 - Any unsupported keywords or missing facts.
-- Any files intentionally excluded from the shareable bundle.
+- Any files intentionally excluded from the public bundle.

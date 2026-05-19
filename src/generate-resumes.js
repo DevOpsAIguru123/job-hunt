@@ -177,7 +177,7 @@ function buildDocument(profile, job) {
   }
 
   return new Document({
-    creator: "Shareable Resume Generator",
+    creator: "Job Hunt",
     title: `${contact.name || "Candidate"} - ${job.title}`,
     description: `Resume tailored for ${job.company} ${job.title}`,
     styles: {
