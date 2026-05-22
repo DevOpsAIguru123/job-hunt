@@ -1,4 +1,0 @@
-interface:
-  display_name: "Browser Use Setup"
-  short_description: "Set up and safely run Browser Use scouts"
-  default_prompt: "Use $browser-use-setup to verify my Browser Use setup and run a safe inspection-only scout."

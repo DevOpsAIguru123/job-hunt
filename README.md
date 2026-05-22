@@ -1,95 +1,111 @@
-# Job Hunt
+# Job Hunt Agent Skill
 
-Privacy-safe job hunt toolkit with JSON-driven resume generation and reusable Codex skills.
+Open-source job-application preparation for agentic coding assistants. This package installs a reusable skill that helps Codex and Claude Code turn a user-provided master resume, job links, and job descriptions into truthful tailored resumes and review notes organized by company and role.
 
-This folder intentionally excludes private resumes, application history, screenshots, browser profiles, personal configuration, and generated artifacts. Replace the sample data in `data/` with your own profile and target jobs before generating resumes.
+## One-command setup
 
-## What It Includes
-
-- `src/generate-resumes.js` - CLI that creates ATS-friendly `.docx` resumes.
-- `data/sample-profile.json` - placeholder profile, roles, skills, education, and certifications.
-- `data/sample-jobs.json` - placeholder target jobs used to tailor output.
-- `skills/resume-generation/` - Codex skill plus references for resume generation, ATS checks, tailoring, bullet writing, quantification, and data schema.
-- `skills/browser-use-setup/` - Codex skill for setting up and safely running Browser Use scouting/recovery workflows.
-- `package.json` - minimal dependency list and npm scripts.
-
-## What It Excludes
-
-- Existing generated resumes.
-- Real contact details, work history, and personal profile data.
-- Job-application databases and tracker state.
-- Browser profiles, screenshots, run logs, and submission evidence.
-- API keys, `.env` files, and local credentials.
-
-## Setup
+Install the skill for both Codex and Claude Code:
 
 ```bash
+curl -fsSL https://raw.githubusercontent.com/DevOpsAIguru123/job-hunt/main/install.sh | bash -s -- --yes
+```
+
+Local clone setup:
+
+```bash
+git clone https://github.com/DevOpsAIguru123/job-hunt.git
+cd job-hunt
+bash install.sh --yes
 npm install
-npm run generate
+npm run test:setup
 ```
 
-Generated files are written to `output/` by default.
-
-## Usage
+Dry run:
 
 ```bash
-node src/generate-resumes.js \
-  --profile data/sample-profile.json \
-  --jobs data/sample-jobs.json \
-  --out output
+bash install.sh --dry-run
 ```
 
-You can generate for one job id:
+Install only one agent:
 
 ```bash
-node src/generate-resumes.js --job-id platform-engineer
+bash install.sh --codex-only --yes
+bash install.sh --claude-only --yes
 ```
 
-## Data Model
+## What Gets Installed
 
-`sample-profile.json` contains:
+The installer copies `skills/jobhunt-ready-refresh` into:
 
-- `contact`: name, location, email, links.
-- `summary`: default professional summary.
-- `skills`: labeled skill groups.
-- `certifications`: certification list.
-- `education`: education entries.
-- `roles`: reusable experience entries with bullets.
+- `~/.codex/skills/jobhunt-ready-refresh`
+- `~/.claude/skills/jobhunt-ready-refresh`
 
-`sample-jobs.json` contains:
+It only installs the skill instructions and references. It does not copy private applicant data, resumes, local databases, screenshots, browser profiles, run logs, credentials, or `.env` files.
 
-- `id`: stable output id.
-- `company`: target company.
-- `title`: target role title.
-- `keywords`: terms to emphasize.
-- `summary`: optional tailored summary override.
-- `skills`: optional extra skill groups.
-- `experience`: role ids and selected bullet indexes.
+## How To Use
 
-## Privacy Check
-
-Before publishing or redistributing this folder, run:
-
-```bash
-npm run privacy-check
-```
-
-The check looks for common private file types and placeholder values that should be replaced before publishing.
-
-## Skill Bundle
-
-The bundled skills can be copied into a Codex skills directory.
+After setup, ask Codex or Claude Code:
 
 ```text
-skills/
-├── resume-generation/
-│   ├── SKILL.md
-│   ├── agents/openai.yaml
-│   └── references/
-└── browser-use-setup/
-    ├── SKILL.md
-    ├── agents/openai.yaml
-    └── references/
+Use the jobhunt-ready-refresh skill with my master resume path, these job links, and these job descriptions to generate tailored resumes and review notes.
 ```
 
-The skills are written generically and do not contain real resumes, personal profile details, application data, credentials, or local browser state.
+The user must provide the master resume path, job links, and job descriptions. The skill should not search for roles, decide what jobs to add, or require a pre-existing `ready` queue.
+
+Generated files go under a `resumes/` folder in the master resume's directory. If the folder does not exist, create it. For each role, create a company and role folder based on the job link or job description:
+
+```text
+<master-resume-directory>/resumes/<company-slug>/<role-slug>/
+```
+
+Each role folder should contain the tailored resume and a review note. A local tracker database at `data/job_applications.sqlite` is optional; you can adapt the schema and scripts for your workflow.
+
+## Safety Rules
+
+Do not commit private applicant data. Keep your `.env`, `config/applicant.json`, SQLite databases, generated resumes, screenshots, browser profiles, and run artifacts local.
+
+Employment applications are high-impact actions:
+
+- Do not submit applications automatically.
+- Do not mark a row `applied` unless the user confirms the submission.
+- Do not invent missing job details, applicant facts, employers, degrees, dates, metrics, or credentials.
+- Prefer official employer career pages or official ATS links when the user provides them.
+- Create a SQLite backup before any database write.
+
+## Configuration
+
+Start from the sample file:
+
+```bash
+cp .env.example .env
+```
+
+Keep secrets and personal details in local files that are ignored by git. For public demos, use synthetic applicant data.
+
+## Verification
+
+Run the setup smoke tests:
+
+```bash
+npm run test:setup
+```
+
+Check the installer without writing files:
+
+```bash
+bash install.sh --dry-run
+```
+
+When using an optional local tracker, verify the database and generated resume files before reporting completion:
+
+```bash
+sqlite3 data/job_applications.sqlite "PRAGMA integrity_check;"
+sqlite3 -header -column data/job_applications.sqlite "SELECT status, COUNT(*) AS count FROM applications GROUP BY status ORDER BY status;"
+```
+
+## Package Layout
+
+- `install.sh` - one-command installer for Codex and Claude Code.
+- `skills/jobhunt-ready-refresh/` - installable agent skill.
+- `tests/setup.test.js` - setup smoke tests.
+- `.env.example` - placeholder-only local configuration template.

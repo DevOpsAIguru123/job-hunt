@@ -1,14 +1,11 @@
 {
-  "name": "job-hunt",
-  "version": "0.1.0",
+  "name": "job-hunt-agent-setup",
   "private": true,
-  "description": "Privacy-safe job hunt toolkit with JSON-driven DOCX resume generation.",
-  "type": "commonjs",
   "scripts": {
-    "generate": "node src/generate-resumes.js",
-    "privacy-check": "node src/privacy-check.js"
+    "test": "playwright test",
+    "test:setup": "playwright test tests/setup.test.js"
   },
-  "dependencies": {
-    "docx": "^9.6.1"
+  "devDependencies": {
+    "@playwright/test": "^1.59.1"
   }
 }
