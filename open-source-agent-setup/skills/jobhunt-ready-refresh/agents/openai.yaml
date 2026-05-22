@@ -1,0 +1,3 @@
+display_name: Jobhunt Ready Refresh
+short_description: Prepare tailored resumes from supplied jobs.
+default_prompt: Use the supplied master resume path, job links, and job descriptions to generate truthful tailored resumes and review notes under a resumes folder next to the master resume, grouped by company and role. Do not search for jobs unless explicitly asked.
